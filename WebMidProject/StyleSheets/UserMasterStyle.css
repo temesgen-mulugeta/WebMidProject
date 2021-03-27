@@ -1,0 +1,19 @@
+﻿
+body {
+    font-family:'Avenir Next LT Pro';
+    font-size:1.2rem;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.logo{
+    margin-left: 40px;
+}
+
+.navs {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    margin-right:20px;
+    padding: 10px;
+}
