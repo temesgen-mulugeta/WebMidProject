@@ -115,7 +115,6 @@
     <Content Include="Pages\Pricing.aspx" />
     <Content Include="Pages\Signup.aspx" />
     <Content Include="Pages\UserHome.aspx" />
-    <Content Include="Pages\WebForm2.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -250,6 +249,7 @@
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Pricing.aspx.cs">
       <DependentUpon>Pricing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,13 +277,6 @@
     </Compile>
     <Compile Include="Pages\UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
