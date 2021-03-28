@@ -64,6 +64,14 @@ namespace WebMidProject.Pages
                 OrderB.Text = "Confirm Order";
                 TotalAmountLabel.Text = availableDimensions[index][1];
             }
+            else
+            {
+                if (FileUpload.HasFile)
+                {
+                    var response = new Orders().PlaceOrder(serviceType: orderTypeList.Text, dimensions: orderDimensionsList.Text, quantity: double.Parse(QuantityTB.Text), FileUpload.FileBytes);
+                    
+                }
+            }
         }
     }
 }
