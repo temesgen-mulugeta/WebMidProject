@@ -13,5 +13,10 @@ namespace WebMidProject.Pages
         {
 
         }
+
+        protected void Download_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
