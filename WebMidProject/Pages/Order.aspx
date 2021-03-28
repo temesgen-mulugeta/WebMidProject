@@ -1,15 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/UserMaster.Master" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="WebMidProject.Pages.Order" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../StyleSheets/Orders.css" rel="stylesheet" type="text/css" />
+    <title>Make Orders</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
    
       <div class="order__container" style="
-          
+              right: 0;
+              left: 0;
+              margin-right: auto;
+              margin-left: auto;
+              overflow: hidden;
+              display: flex;
+              margin-top: 150px;
+              margin-bottom: 210px;
+              align-items: center;
+              justify-content: center;
+              width: 750px;
+              height: 550px;
+              border-radius: 1rem;
+              box-shadow: 0px 2px 6px rgba(0,0,0,.25);
           ">
     <div class="container__child signup__thumbnail">
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/order.jpg" />
+        
+       <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/order.jpg" />
         
         </div>
 
@@ -34,13 +49,17 @@
           <p class="label" style="margin-top:15px;">
               Quantity</p>
           <asp:TextBox ID="QuantityTB" class="form-control" runat="server" placeholder="Quantity"></asp:TextBox>
+
+          <p class="label" style="margin-top:15px;">
+              Upload Design</p>
+          <asp:FileUpload ID="FileUpload" class="form-control" runat="server" placeholder="Upload FIle" />
           <br />
         
           <p>
               <asp:Button ID="OrderB" class="button" runat="server" Text="Order" OnClick="OrderB_Click"/>
               <asp:Label ID="TotalAmountLabel" runat="server"/>
           </p>
-     
+            
           </div>
       </div>
           </div>

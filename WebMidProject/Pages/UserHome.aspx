@@ -27,7 +27,7 @@
         <!--services -->
         <div class="container">
             <!--business card -->
-            <a href="#">
+            <a href="Pricing.aspx">
 
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../Images/UserHome/businesscard.jpg" alt="Card image cap">
@@ -41,7 +41,7 @@
 
 
             <!--post Card -->
-            <a href="#">
+            <a href="Pricing.aspx">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../Images/UserHome/postcard.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -54,7 +54,7 @@
             </a>
 
             <!--Brochures -->
-            <a href="#">
+            <a href="Pricing.aspx">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../Images/UserHome/brochure.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -67,7 +67,7 @@
             </a>
 
             <!--Stickers -->
-            <a href="#">
+            <a href="Pricing.aspx">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../Images/UserHome/sticker.jpg" alt="Card image cap">
                     <div class="card-body">

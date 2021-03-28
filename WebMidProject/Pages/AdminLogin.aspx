@@ -1,18 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebMidProject.Pages.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="WebMidProject.Pages.AdminLogin" %>
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr"  >
-  <head>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
     <meta charset="utf-8"/>
     <title>Login to Adey </title>
     <link rel="stylesheet" href="../StyleSheets/Signup.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
        <link rel="icon" type="image/png" href="../Images/favicon.png"/>
   </head>
-  <body> 
-      <div class="signup__container">
+<body>
+    <div class="signup__container">
     <div class="container__child signup__thumbnail">
-       <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/signin.jpg" /> 
+       <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/admin.jpg" /> 
         
         </div>
 
@@ -38,10 +39,10 @@
           
           <p>
               
-             <asp:Button ID="SigninB" class="button" runat="server" OnClick="Login_Click" Text="Sign In" />
+             <asp:Button ID="AdminSignB" class="button" runat="server" OnClick="Admin_Login_Click" Text="Sign In" />
           </p>
-          <a href="AdminLogin.aspx" style="color:#febe19; margin-top:-30px;margin-left:10px; font-weight:bold">Login as Admin</a>
-          <a href="Signup.aspx" style="color:#982304; margin-top:-30px;margin-left:10px; font-weight:bold">Sign Up</a>
+          <a href="Login.aspx" style="color:#febe19; margin-top:-30px;margin-left:10px; font-weight:bold">Login as User</a>
+        
       </form>
           </div>
       </div>
@@ -49,7 +50,5 @@
           </div>
    
 
-  </body>
+</body>
 </html>
-
-

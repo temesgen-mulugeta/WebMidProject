@@ -11,7 +11,7 @@ namespace WebMidProject.Pages
 {
 
 
-    public partial class Login
+    public partial class AdminLogin
     {
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace WebMidProject.Pages
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
 
         /// <summary>
-        /// SigninB control.
+        /// AdminSignB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SigninB;
+        protected global::System.Web.UI.WebControls.Button AdminSignB;
     }
 }
