@@ -14,7 +14,7 @@ namespace WebMidProject.Pages
         {
             if (!Cookie.isUserLoggedIn(Request))
             {
-                Response.Redirect("Login.aspx");
+                //Response.Redirect("Login.aspx");
                 return;
             }
 

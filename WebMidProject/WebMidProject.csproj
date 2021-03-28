@@ -101,6 +101,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\admin.jpg" />
+    <Content Include="Images\favicon.png" />
     <Content Include="Images\Home.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\Logo.svg" />
@@ -114,6 +116,9 @@
     <Content Include="Images\Pricing\br4.jpg" />
     <Content Include="Images\Pricing\pc1.jpg" />
     <Content Include="Images\Pricing\pc2.jpg" />
+    <Content Include="Images\Pricing\st1.jpg" />
+    <Content Include="Images\Pricing\st2.jpg" />
+    <Content Include="Images\Pricing\st3.jpg" />
     <Content Include="Images\signin.jpg" />
     <Content Include="Images\signup.jpg" />
     <Content Include="Images\UserHome\brochure.jpg" />
@@ -122,6 +127,9 @@
     <Content Include="Images\UserHome\homegif.gif" />
     <Content Include="Images\UserHome\postcard.jpg" />
     <Content Include="Images\UserHome\sticker.jpg" />
+    <Content Include="Pages\AdminHome.aspx" />
+    <Content Include="Pages\AdminLogin.aspx" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Order.aspx" />
     <Content Include="Pages\Pricing.aspx" />
     <Content Include="Pages\Signup.aspx" />
@@ -226,6 +234,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="StyleSheets\AdminHome.css" />
     <Content Include="StyleSheets\Orders.css" />
     <Content Include="StyleSheets\Pricing.css" />
     <Content Include="StyleSheets\Signup.css" />
@@ -257,6 +266,20 @@
     </Compile>
     <Compile Include="MasterPage\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>

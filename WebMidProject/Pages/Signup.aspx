@@ -5,9 +5,10 @@
 <html lang="en" dir="ltr"  >
   <head>
     <meta charset="utf-8">
-    <title>Login Form Design | Code4Education</title>
+    <title>Adey Printing | Signup</title>
     <link rel="stylesheet" href="../StyleSheets/Signup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="icon" type="image/png" href="../Images/favicon.png"/>
   </head>
   <body> 
       <div class="signup__container">
@@ -44,6 +45,7 @@
           <p>
               <asp:Button ID="SignupB" class="button" runat="server" Text="Sign Up" OnClick="SignupB_Click" />
           </p>
+          <a href="Login.aspx" style="color:#febe19; margin-top:-30px;margin-left:10px;">I have an account</a>
       </form>
           </div>
       </div>
