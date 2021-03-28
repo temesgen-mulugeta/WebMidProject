@@ -127,6 +127,7 @@
     <Content Include="Images\UserHome\homegif.gif" />
     <Content Include="Images\UserHome\postcard.jpg" />
     <Content Include="Images\UserHome\sticker.jpg" />
+    <Content Include="Pages\AdminHome.aspx" />
     <Content Include="Pages\AdminLogin.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Order.aspx" />
@@ -233,7 +234,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="StyleSheets\AdminLogin.css" />
+    <Content Include="StyleSheets\AdminHome.css" />
     <Content Include="StyleSheets\Orders.css" />
     <Content Include="StyleSheets\Pricing.css" />
     <Content Include="StyleSheets\Signup.css" />
@@ -265,6 +266,13 @@
     </Compile>
     <Compile Include="MasterPage\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
