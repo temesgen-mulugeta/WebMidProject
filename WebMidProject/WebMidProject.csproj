@@ -232,7 +232,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Auth.cs" />
     <Compile Include="BusinessLayer\DataAccess.cs" />
+    <Compile Include="BusinessLayer\Orders.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

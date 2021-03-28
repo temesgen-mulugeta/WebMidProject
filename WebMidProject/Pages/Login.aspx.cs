@@ -25,6 +25,7 @@ namespace WebMidProject.Pages
             if (response)
             {
                 Session["email"] = LoginEmailTB.Text;
+                Response.Redirect("UserHome.aspx");
             }
                 
 
