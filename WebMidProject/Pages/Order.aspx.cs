@@ -11,13 +11,13 @@ namespace WebMidProject.Pages
     public partial class Order : System.Web.UI.Page
     {
         String[][] availableDimensions = null;
-
+        int i = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!Cookie.isUserLoggedIn(Request))
             {
-                Response.Redirect("Login.aspx");
+                //Response.Redirect("Login.aspx");
                 return;
             }
 
@@ -44,6 +44,30 @@ namespace WebMidProject.Pages
             foreach (var dimension in availableDimensions)
             {
                 orderDimensionsList.Items.Add(dimension[0]);
+            }
+
+        }
+
+        protected void orderDimensionsList_TextChanged(object sender, EventArgs e)
+        {
+            
+        
+
+
+        }
+
+        protected void OrderB_Click(object sender, EventArgs e)
+        {
+            availableDimensions = new Orders().GetAvailableDimensions(orderTypeList.SelectedValue);
+
+            int index = (from item in availableDimensions[0]
+                         where item.IndexOf(orderDimensionsList.Text) >= 0
+                         select item.IndexOf(orderDimensionsList.Text)).SingleOrDefault();
+
+            if (OrderB.Text == "Order")
+            {
+                OrderB.Text = "Pay";
+                TotalAmountLabel.Text = availableDimensions[index][1];
             }
         }
     }

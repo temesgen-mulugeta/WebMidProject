@@ -4,8 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-
-      <div class="signup__container">
+   
+      <div class="order__container" style="
+          
+          ">
     <div class="container__child signup__thumbnail">
         <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/order.jpg" />
         
@@ -25,7 +27,7 @@
           <br />
           <p class="label">
              ORDER SIZE</p>
-          <asp:DropDownList ID="orderDimensionsList" class="form-control" runat="server" placeholder="Order Type">
+          <asp:DropDownList ID="orderDimensionsList" AutoPostBack="true" OnSelectedIndexChanged="orderDimensionsList_TextChanged" class="form-control" runat="server" placeholder="Order Type">
           </asp:DropDownList>
           
           
@@ -35,7 +37,8 @@
           <br />
         
           <p>
-              <asp:Button ID="OrderB" class="button" runat="server" Text="Order" />
+              <asp:Button ID="OrderB" class="button" runat="server" Text="Order" OnClick="OrderB_Click"/>
+              <asp:Label ID="TotalAmountLabel" runat="server"/>
           </p>
      
           </div>
@@ -43,7 +46,8 @@
           </div>
           </div>
    
-
+    
+   
 </asp:Content>
 
 
