@@ -38,7 +38,7 @@
               PASSWORD</p>
           <asp:TextBox ID="PasswordTB"  class="form-control" runat="server" placeholder="Password"></asp:TextBox>
           <p>
-              <asp:Button ID="SignupB" class="button" runat="server" Text="Sign Up" />
+              <asp:Button ID="SignupB" class="button" runat="server" Text="Sign Up" OnClick="SignupB_Click" />
           </p>
       </form>
           </div>

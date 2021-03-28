@@ -43,5 +43,15 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+    <footer class="page-footer font-small blue" style="margin-top:30px;background-color:#febe19">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="#"> Adey Printing Service | Built for Web Mid Project </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
 </body>
 </html>
