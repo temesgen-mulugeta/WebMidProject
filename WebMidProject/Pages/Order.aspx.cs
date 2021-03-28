@@ -11,7 +11,7 @@ namespace WebMidProject.Pages
     public partial class Order : System.Web.UI.Page
     {
         String[][] availableDimensions = null;
-
+        int i = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,7 +21,7 @@ namespace WebMidProject.Pages
                 return;
             }
 
-            if (orderTypeList.Items.Count == 0)
+            if (orderTypeList.Items.Count == 1)
             {
                 var orderTypes = new Orders().GetAvailableOrdersTypes();
                 if (orderTypes != null && orderTypes.Length > 0)
@@ -44,6 +44,30 @@ namespace WebMidProject.Pages
             foreach (var dimension in availableDimensions)
             {
                 orderDimensionsList.Items.Add(dimension[0]);
+            }
+
+        }
+
+        protected void orderDimensionsList_TextChanged(object sender, EventArgs e)
+        {
+            
+        
+
+
+        }
+
+        protected void OrderB_Click(object sender, EventArgs e)
+        {
+            availableDimensions = new Orders().GetAvailableDimensions(orderTypeList.SelectedValue);
+
+            int index = (from item in availableDimensions[0]
+                         where item.IndexOf(orderDimensionsList.Text) >= 0
+                         select item.IndexOf(orderDimensionsList.Text)).SingleOrDefault();
+
+            if (OrderB.Text == "Calculate Price")
+            {
+                OrderB.Text = "Confirm Order";
+                TotalAmountLabel.Text = availableDimensions[index][1];
             }
         }
     }
