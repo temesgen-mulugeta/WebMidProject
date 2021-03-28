@@ -9,16 +9,25 @@ namespace WebMidProject.BusinessLayer
     {
         HttpCookie userInfo;
         HttpResponse response;
-        public Cookie (String email, HttpResponse response)
+        
+        public Cookie(HttpResponse response)
+        {
+            this.response = response;
+        }
+
+        public Cookie (String email, HttpResponse response) : this(response)
         {
             userInfo = new HttpCookie("userInfo");
             userInfo["email"] = $"{email}";
             userInfo.Expires = DateTime.Now.AddDays(30);
-
-            this.response = response;
         }
 
+        
+
         public void AddCookie() => response.Cookies.Add(userInfo);
+        public void RemoveCookie() => response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(-1);
+
+
 
         public static String GetCookieData(HttpRequest request) => request.Cookies["email"].Value;
 
