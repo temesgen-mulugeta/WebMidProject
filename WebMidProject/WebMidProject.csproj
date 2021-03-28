@@ -104,6 +104,16 @@
     <Content Include="Images\Home.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\Logo.svg" />
+    <Content Include="Images\order.jpg" />
+    <Content Include="Images\Pricing\bc1.jpg" />
+    <Content Include="Images\Pricing\bc2.jpg" />
+    <Content Include="Images\Pricing\bc3.jpg" />
+    <Content Include="Images\Pricing\br1.jpg" />
+    <Content Include="Images\Pricing\br2.jpg" />
+    <Content Include="Images\Pricing\br3.jpg" />
+    <Content Include="Images\Pricing\br4.jpg" />
+    <Content Include="Images\Pricing\pc1.jpg" />
+    <Content Include="Images\Pricing\pc2.jpg" />
     <Content Include="Images\signin.jpg" />
     <Content Include="Images\signup.jpg" />
     <Content Include="Images\UserHome\brochure.jpg" />
@@ -112,6 +122,7 @@
     <Content Include="Images\UserHome\homegif.gif" />
     <Content Include="Images\UserHome\postcard.jpg" />
     <Content Include="Images\UserHome\sticker.jpg" />
+    <Content Include="Pages\Order.aspx" />
     <Content Include="Pages\Pricing.aspx" />
     <Content Include="Pages\Signup.aspx" />
     <Content Include="Pages\UserHome.aspx" />
@@ -215,6 +226,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="StyleSheets\Orders.css" />
     <Content Include="StyleSheets\Pricing.css" />
     <Content Include="StyleSheets\Signup.css" />
     <Content Include="StyleSheets\UserHome.css" />
@@ -245,12 +257,21 @@
     <Compile Include="MasterPage\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Pages\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+=======
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+>>>>>>> c9d41cf6df62d356f8d88bde5bbf3afe1f2d2717
     </Compile>
     <Compile Include="Pages\Pricing.aspx.cs">
       <DependentUpon>Pricing.aspx</DependentUpon>
