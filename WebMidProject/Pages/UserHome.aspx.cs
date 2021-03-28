@@ -8,12 +8,6 @@ namespace WebMidProject.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!Cookie.isUserLoggedIn(Request))
-            {
-               // Response.Redirect("Login.aspx");
-                return;
-            }
-
         }
     }
 }

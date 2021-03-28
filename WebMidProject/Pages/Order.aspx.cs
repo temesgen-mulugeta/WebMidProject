@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebMidProject.BusinessLayer;
 
 namespace WebMidProject.Pages
@@ -11,13 +7,12 @@ namespace WebMidProject.Pages
     public partial class Order : System.Web.UI.Page
     {
         String[][] availableDimensions = null;
-        int i = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!Cookie.isUserLoggedIn(Request))
             {
-                //Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx");
                 return;
             }
 
