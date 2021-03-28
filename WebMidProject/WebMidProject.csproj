@@ -254,6 +254,13 @@
     <Compile Include="Pages\UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
