@@ -19,31 +19,23 @@
       
           <p class="label">
               ORDER TYPE</p>
-          <asp:DropDownList ID="orderType" class="form-control" runat="server" placeholder="Order Type">
-              <asp:ListItem>Business Card</asp:ListItem>
-              <asp:ListItem>Post Card</asp:ListItem>
-              <asp:ListItem>Brochure</asp:ListItem>
-              <asp:ListItem>Sticker</asp:ListItem>
+          <asp:DropDownList ID="orderTypeList" AutoPostBack="true" OnSelectedIndexChanged="orderTypeList_TextChanged" class="form-control" runat="server" placeholder="Order Type">
           </asp:DropDownList>
           
           <br />
           <p class="label">
              ORDER SIZE</p>
-          <asp:DropDownList ID="orderSize" class="form-control" runat="server" placeholder="Order Type">
-              <asp:ListItem>Business Card</asp:ListItem>
-              <asp:ListItem>Post Card</asp:ListItem>
-              <asp:ListItem>Brochure</asp:ListItem>
-              <asp:ListItem>Sticker</asp:ListItem>
+          <asp:DropDownList ID="orderDimensionsList" class="form-control" runat="server" placeholder="Order Type">
           </asp:DropDownList>
           
           
           <p class="label" style="margin-top:15px;">
               Quantity</p>
-          <asp:TextBox ID="QuantityTB"  class="form-control" runat="server" placeholder="Quantity"></asp:TextBox>
+          <asp:TextBox ID="QuantityTB" class="form-control" runat="server" placeholder="Quantity"></asp:TextBox>
           <br />
         
           <p>
-              <asp:Button ID="OrderB" class="button" runat="server" Text="Order" OnClick="orderB_Click" />
+              <asp:Button ID="OrderB" class="button" runat="server" Text="Order" />
           </p>
      
           </div>

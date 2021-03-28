@@ -1,4 +1,5 @@
 ﻿using System.Data.SQLite;
+using System.Diagnostics;
 
 namespace WebMidProject.BusinessLayer
 {
@@ -9,14 +10,13 @@ namespace WebMidProject.BusinessLayer
             try
             {
                 var names = name.Split(' ');
-                var signUpQuery = $"INSERT INTO users (first_name, last_name, phoneNumber, email, password) " +
+                var signUpQuery = $"INSERT INTO users (first_name, last_name, phone_number, email, password) " +
                     $"VALUES ('{names[0]}','{names[1]}','{phoneNumber}','{email}','{password}');";
 
                 con.Open();
                 var cmd = new SQLiteCommand(signUpQuery, con);
                 cmd.ExecuteScalar();
                 con.Close();
-
             }
             catch (SQLiteException e)
             {
@@ -37,6 +37,7 @@ namespace WebMidProject.BusinessLayer
                 var reader = cmd.ExecuteReader();
                 var userExists = reader.HasRows;
                 con.Close();
+                Debug.Print($"userExists: {userExists}");
                 return userExists;
 
 

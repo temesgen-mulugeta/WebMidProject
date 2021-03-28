@@ -245,6 +245,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Auth.cs" />
+    <Compile Include="BusinessLayer\Cookie.cs" />
     <Compile Include="BusinessLayer\DataAccess.cs" />
     <Compile Include="BusinessLayer\Orders.cs" />
     <Compile Include="Global.asax.cs">
@@ -257,21 +258,19 @@
     <Compile Include="MasterPage\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Pages\Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
->>>>>>> c9d41cf6df62d356f8d88bde5bbf3afe1f2d2717
     </Compile>
     <Compile Include="Pages\Pricing.aspx.cs">
       <DependentUpon>Pricing.aspx</DependentUpon>

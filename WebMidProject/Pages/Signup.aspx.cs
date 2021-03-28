@@ -10,15 +10,15 @@ namespace WebMidProject.Pages
 {
     public partial class Home : System.Web.UI.Page
     {
-        DataAccess dataAccess;
+        Auth auth;
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataAccess = new DataAccess();
+            auth = new Auth();
         }
 
         protected void SignupB_Click(object sender, EventArgs e)
         {
-            var response = dataAccess.SignUp(
+            var response = auth.SignUp(
                 name: NameTB.Text, 
                 phoneNumber: PhoneTB.Text, 
                 email: EmailTB.Text, 

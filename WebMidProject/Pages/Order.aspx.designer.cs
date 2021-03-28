@@ -24,22 +24,22 @@ namespace WebMidProject.Pages
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// orderType control.
+        /// orderTypeList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList orderType;
+        protected global::System.Web.UI.WebControls.DropDownList orderTypeList;
 
         /// <summary>
-        /// orderSize control.
+        /// orderDimensionsList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList orderSize;
+        protected global::System.Web.UI.WebControls.DropDownList orderDimensionsList;
 
         /// <summary>
         /// QuantityTB control.
