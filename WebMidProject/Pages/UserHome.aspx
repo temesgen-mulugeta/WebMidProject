@@ -2,7 +2,7 @@
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
         <link href="../StyleSheets/UserHome.css" rel="stylesheet" type="text/css" />
-
+        <title>Adey Printing</title>
     </asp:Content>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,7 +11,7 @@
                 <h1 class="headText">Print Your Ideas</h1>
                 <p>Welcome to adey online printing service. <br /> High Quality Printing Service
                 </p>
-                <asp:Button ID="SignupB" class="button" runat="server" Text="Order Now" />
+                <asp:Button ID="orderNowB" class="button" runat="server" Text="Order Now" />
             </div>
             <div class="first-container-right">
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Home.png" />

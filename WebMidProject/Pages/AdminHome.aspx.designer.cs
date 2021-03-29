@@ -24,6 +24,15 @@ namespace WebMidProject.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// logoutB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logoutB;
+
+        /// <summary>
         /// OrderNo control.
         /// </summary>
         /// <remarks>
@@ -78,12 +87,21 @@ namespace WebMidProject.Pages
         protected global::System.Web.UI.WebControls.Label quantity;
 
         /// <summary>
-        /// SignupB control.
+        /// downloadB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SignupB;
+        protected global::System.Web.UI.WebControls.Button downloadB;
+
+        /// <summary>
+        /// deleteB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton deleteB;
     }
 }

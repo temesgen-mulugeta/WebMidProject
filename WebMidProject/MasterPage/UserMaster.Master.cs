@@ -27,6 +27,8 @@ namespace WebMidProject.MasterPage
 
 
         }
-
+        protected void LoginB_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
