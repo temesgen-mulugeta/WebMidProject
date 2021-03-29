@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/UserMaster.Master" AutoEventWireup="true" CodeBehind="UserHome.aspx.cs" Inherits="WebMidProject.Pages.UserHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/UserMaster.Master" AutoEventWireup="true"
+    CodeBehind="UserHome.aspx.cs" Inherits="WebMidProject.Pages.UserHome" %>
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
         <link href="../StyleSheets/UserHome.css" rel="stylesheet" type="text/css" />
@@ -88,7 +89,8 @@
         <!--Quality -->
         <div>
             <h1 class="qualityHead">We Believe in Quality</h1>
-            <p style="text-align:center;margin-bottom:30px;">We don't compromise quality.<br /> We always deliver the quality you desire!</p>
+            <p style="text-align:center;margin-bottom:30px;">We don't compromise quality.<br /> We always deliver the
+                quality you desire!</p>
             <div class="container gifcontainer">
                 <div class="gifimage">
                     <img src="../Images/UserHome/gifImage.jpg" alt="Card image cap">

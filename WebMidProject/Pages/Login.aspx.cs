@@ -9,7 +9,7 @@ namespace WebMidProject.Pages
         Cookie cookie;
         protected void Page_Load(object sender, EventArgs e)
         {
-                auth = new Auth();
+            auth = new Auth();
         }
         protected void Login_Click(object sender, EventArgs e)
         {
@@ -21,12 +21,12 @@ namespace WebMidProject.Pages
             System.Diagnostics.Debug.WriteLine(response);
             if (response)
             {
-                cookie = new Cookie(LoginEmailTB.Text, Response);
+                cookie = new Cookie(LoginEmailTB.Text, "user", Response);
                 cookie.AddCookie();
                 Response.Redirect("UserHome.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
-                
+
 
 
         }

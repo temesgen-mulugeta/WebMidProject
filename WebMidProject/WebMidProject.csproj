@@ -162,6 +162,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="MasterPage\UserMaster.Master" />
+    <Content Include="DB\OnlinePrintingService.db" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -260,6 +261,7 @@
     <Compile Include="BusinessLayer\Auth.cs" />
     <Compile Include="BusinessLayer\Cookie.cs" />
     <Compile Include="BusinessLayer\DataAccess.cs" />
+    <Compile Include="Models\CookieUserInfo.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="BusinessLayer\Orders.cs" />
     <Compile Include="Global.asax.cs">

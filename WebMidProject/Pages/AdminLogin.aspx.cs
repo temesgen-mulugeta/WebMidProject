@@ -14,24 +14,24 @@ namespace WebMidProject.Pages
         }
         protected void Admin_Login_Click(object sender, EventArgs e)
         {
-           
-                var response = auth.Login(
-                   role: "admin",
-                   email: LoginEmailTB.Text,
-                   password: LoginPasswordTB.Text
-                   );
-                System.Diagnostics.Debug.WriteLine(response);
-                if (response)
-                {
-                    cookie = new Cookie(LoginEmailTB.Text, Response);
-                    cookie.AddCookie();
-                    Response.Redirect("AdminHome.aspx", false);
-                    Context.ApplicationInstance.CompleteRequest();
+
+            var response = auth.Login(
+               role: "admin",
+               email: LoginEmailTB.Text,
+               password: LoginPasswordTB.Text
+               );
+            System.Diagnostics.Debug.WriteLine(response);
+            if (response)
+            {
+                cookie = new Cookie(LoginEmailTB.Text, "admin", Response);
+                cookie.AddCookie();
+                Response.Redirect("AdminHome.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
 
-            
+
 
 
         }
