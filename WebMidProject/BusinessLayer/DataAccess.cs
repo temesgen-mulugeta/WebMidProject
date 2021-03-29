@@ -1,4 +1,7 @@
-﻿using System.Data.SQLite;
+﻿using System;
+using System.Data.SQLite;
+using System.Diagnostics;
+using System.IO;
 
 namespace WebMidProject.BusinessLayer
 {
@@ -7,8 +10,9 @@ namespace WebMidProject.BusinessLayer
         readonly protected SQLiteConnection con;
         public DataAccess()
         {
-            string connectionString = "Data Source=C:\\Users\\user\\Desktop\\" +
-                "WebMidDatabase\\OnlinePrintingService.db";
+            string DBpath = $"{AppContext.BaseDirectory}\\DB\\OnlinePrintingService.db";
+            string connectionString = $"Data Source={DBpath}";
+            Debug.Print(AppContext.BaseDirectory);
             con = new SQLiteConnection(connectionString);
         }
 
