@@ -123,6 +123,7 @@
     <Content Include="Images\Pricing\st3.jpg" />
     <Content Include="Images\signin.jpg" />
     <Content Include="Images\signup.jpg" />
+    <Content Include="Images\success.png" />
     <Content Include="Images\UserHome\brochure.jpg" />
     <Content Include="Images\UserHome\businesscard.jpg" />
     <Content Include="Images\UserHome\gifImage.jpg" />
@@ -133,6 +134,7 @@
     <Content Include="Pages\AdminLogin.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Order.aspx" />
+    <Content Include="Pages\OrderComplete.aspx" />
     <Content Include="Pages\Pricing.aspx" />
     <Content Include="Pages\Signup.aspx" />
     <Content Include="Pages\UserHome.aspx" />
@@ -296,6 +298,13 @@
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderComplete.aspx.cs">
+      <DependentUpon>OrderComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderComplete.aspx.designer.cs">
+      <DependentUpon>OrderComplete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Pricing.aspx.cs">
       <DependentUpon>Pricing.aspx</DependentUpon>
