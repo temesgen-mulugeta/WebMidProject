@@ -32,34 +32,24 @@
 
                             <asp:TextBox ID="LoginEmailTB" class="form-control" runat="server" placeholder="Email">
                             </asp:TextBox>
-                            <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator2" runat="server"
-                                ErrorMessage="Email cannot be blank" ControlToValidate="LoginEmailTB" ForeColor="Red">
+                            <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Email cannot be blank" ControlToValidate="LoginEmailTB" ForeColor="Red">
                             </asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator1"
-                                runat="server" ControlToValidate="LoginEmailTB" ErrorMessage="Incorrect format"
-                                ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+                            <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator1" runat="server" ControlToValidate="LoginEmailTB" ErrorMessage="Incorrect format" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
                             </asp:RegularExpressionValidator>
                             <br />
                             <p class="label">
                                 PASSWORD</p>
                             <asp:TextBox ID="LoginPasswordTB" class="form-control" runat="server" placeholder="Password">
                             </asp:TextBox>
-                            <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator4" runat="server"
-                                ErrorMessage="Password cannot be blank" ControlToValidate="LoginPasswordTB"
-                                ForeColor="Red"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator3"
-                                runat="server" ControlToValidate="LoginPasswordTB"
-                                ErrorMessage="Password must contain 8-15 characters" ForeColor="Red"
-                                ValidationExpression="^(?=.*[A-Za-z0-9])(?=.*\d)[A-Za-z0-9\d]{8,15}">
+                            <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator4" runat="server" ErrorMessage="Password cannot be blank" ControlToValidate="LoginPasswordTB" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator3" runat="server" ControlToValidate="LoginPasswordTB" ErrorMessage="Password must contain 8-15 characters" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z0-9])(?=.*\d)[A-Za-z0-9\d]{8,15}">
                             </asp:RegularExpressionValidator>
 
                             <p>
 
-                                <asp:Button ID="AdminSignB" class="button" runat="server" OnClick="Admin_Login_Click"
-                                    Text="Sign In" />
+                                <asp:Button ID="AdminSignB" class="button" runat="server" OnClick="Admin_Login_Click" Text="Sign In" />
                             </p>
-                            <a href="Login.aspx"
-                                style="color:#febe19; margin-top:-30px;margin-left:10px; font-weight:bold">Login as
+                            <a href="Login.aspx" style="color:#febe19; margin-top:-30px;margin-left:10px; font-weight:bold">Login as
                                 User</a>
 
                         </form>
