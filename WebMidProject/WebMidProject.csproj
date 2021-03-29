@@ -102,6 +102,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\admin.jpg" />
+    <Content Include="Images\AdminLogo.png" />
+    <Content Include="Images\delete.png" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\Home.png" />
     <Content Include="Images\Logo.png" />
