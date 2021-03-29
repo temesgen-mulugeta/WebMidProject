@@ -29,7 +29,9 @@ namespace WebMidProject.BusinessLayer
 
 
 
-        public static String GetCookieData(HttpRequest request) => request.Cookies["email"].Value;
+        public static String GetCookieData(HttpRequest request) => 
+            request.
+            Cookies["userInfo"].Value.Substring(request.Cookies["userInfo"].Value.IndexOf('=')+1);
 
         public static bool isUserLoggedIn(HttpRequest request) => 
             request.Cookies["userInfo"] != null && 

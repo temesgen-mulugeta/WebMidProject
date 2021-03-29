@@ -12,7 +12,21 @@ namespace WebMidProject.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                authButtonLabel.Text = Cookie.isUserLoggedIn(Request) ? "Logout" : "Login";
+            if (Cookie.isUserLoggedIn(Request)) { 
+
+                authButtonLabel.Text = "Logout";
+                authLink.NavigateUrl = "UserHome.aspx";
+                //new Cookie(response: Response).RemoveCookie();
+
+            }     
+            else 
+            {
+                authButtonLabel.Text = "Login";
+                authLink.NavigateUrl = "Login.aspx";
+            }
+
+
         }
+
     }
 }

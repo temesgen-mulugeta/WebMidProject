@@ -16,34 +16,39 @@ namespace WebMidProject.BusinessLayer
                 con.Open();
                 var cmd = new SQLiteCommand(signUpQuery, con);
                 cmd.ExecuteScalar();
-                con.Close();
             }
             catch (SQLiteException e)
             {
-
+                Debug.Print(e.Message);
                 return false;
+            }
+            finally
+            {
+                con.Close();
             }
 
             return true;
         }
-        public bool Login(string email, string password)
+        public bool Login(string email, string password, string role)
         {
             try
             {
-                var signInQuery = $"SELECT 1 FROM users WHERE email = '{email}' and password = '{password}'";
+                var signInQuery = $"SELECT 1 FROM users WHERE role = '{role}' and email = '{email}' and password = '{password}'";
 
                 con.Open();
                 var cmd = new SQLiteCommand(signInQuery, con);
                 var reader = cmd.ExecuteReader();
-                var userExists = reader.HasRows;
+                var accountExists = reader.HasRows;
+                reader.Close();
                 con.Close();
-                Debug.Print($"userExists: {userExists}");
-                return userExists;
+                Debug.Print($"userExists: {accountExists}");
+                return accountExists;
 
 
             }
             catch (SQLiteException e)
             {
+                Debug.Print(e.Message);
                 return false;
             }
 

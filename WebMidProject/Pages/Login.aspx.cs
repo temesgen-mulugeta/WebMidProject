@@ -14,6 +14,7 @@ namespace WebMidProject.Pages
         protected void Login_Click(object sender, EventArgs e)
         {
             var response = auth.Login(
+               role: "user",
                email: LoginEmailTB.Text,
                password: LoginPasswordTB.Text
                );
@@ -22,7 +23,8 @@ namespace WebMidProject.Pages
             {
                 cookie = new Cookie(LoginEmailTB.Text, Response);
                 cookie.AddCookie();
-                Response.Redirect("UserHome.aspx");
+                Response.Redirect("UserHome.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
                 
 

@@ -6,27 +6,34 @@ namespace WebMidProject.Pages
 {
     public partial class AdminLogin : System.Web.UI.Page
     {
+        Auth auth;
+        Cookie cookie;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            auth = new Auth();
         }
         protected void Admin_Login_Click(object sender, EventArgs e)
         {
-            /* var response = auth.Login(
-                   email: AdminLoginEmailTB.Text,
-                   password: AdminLoginPasswordTB.Text
+           
+                var response = auth.Login(
+                   role: "admin",
+                   email: LoginEmailTB.Text,
+                   password: LoginPasswordTB.Text
                    );
                 System.Diagnostics.Debug.WriteLine(response);
                 if (response)
                 {
-                    cookie = new Cookie(AdminLoginEmailTB.Text, Response);
+                    cookie = new Cookie(LoginEmailTB.Text, Response);
                     cookie.AddCookie();
-                    Response.Redirect("UserHome.aspx");
-                }
-            */
+                    Response.Redirect("UserHome.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+
 
 
             
+
+
         }
     }
 }

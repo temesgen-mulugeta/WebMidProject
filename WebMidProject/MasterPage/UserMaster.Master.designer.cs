@@ -24,6 +24,15 @@ namespace WebMidProject.MasterPage
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
+        /// authLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink authLink;
+
+        /// <summary>
         /// authButtonLabel control.
         /// </summary>
         /// <remarks>

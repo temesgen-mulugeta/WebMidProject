@@ -32,9 +32,8 @@
         <li class="nav-item">
           <a class="nav-link" href="../Pages/Order.aspx">Order</a>
         </li>
-        <li class="nav-item">
-            
-          <a class="nav-link" href="../Pages/Login.aspx" style="color:#febe19"><asp:Label runat="server" ID="authButtonLabel"></asp:Label></a>
+        <li class="nav-item">    
+          <asp:HyperLink ID="authLink" runat="server" class="nav-link" style="color:#febe19"><asp:Label runat="server" ID="authButtonLabel" ></asp:Label></asp:HyperLink>
         </li>
       </ul>
     </div>

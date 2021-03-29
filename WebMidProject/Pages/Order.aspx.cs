@@ -12,7 +12,8 @@ namespace WebMidProject.Pages
 
             if (!Cookie.isUserLoggedIn(Request))
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
                 return;
             }
 
@@ -25,8 +26,6 @@ namespace WebMidProject.Pages
                     {
                         orderTypeList.Items.Add(orderType);
                     }
-
-
                 }
 
             }
@@ -43,33 +42,28 @@ namespace WebMidProject.Pages
 
         }
 
-        protected void orderDimensionsList_TextChanged(object sender, EventArgs e)
-        {
-            
-        
-
-
-        }
+        protected void orderDimensionsList_TextChanged(object sender, EventArgs e) { }
 
         protected void OrderB_Click(object sender, EventArgs e)
         {
-            availableDimensions = new Orders().GetAvailableDimensions(orderTypeList.SelectedValue);
-
-            int index = (from item in availableDimensions[0]
-                         where item.IndexOf(orderDimensionsList.Text) >= 0
-                         select item.IndexOf(orderDimensionsList.Text)).SingleOrDefault();
-
-            if (OrderB.Text == "Calculate Price")
+            if (orderTypeList.SelectedValue != String.Empty
+                    && orderDimensionsList.SelectedValue != String.Empty)
             {
-                OrderB.Text = "Confirm Order";
-                TotalAmountLabel.Text = availableDimensions[index][1];
-            }
-            else
-            {
-                if (FileUpload.HasFile)
+                availableDimensions = new Orders().GetAvailableDimensions(orderTypeList.SelectedValue);
+
+                var index = (from item in availableDimensions[0]
+                             where item.IndexOf(orderDimensionsList.Text) >= 0
+                             select item.IndexOf(orderDimensionsList.Text)).SingleOrDefault();
+
+                if (OrderB.Text == "Calculate Price")
                 {
-                    var response = new Orders().PlaceOrder(serviceType: orderTypeList.Text, dimensions: orderDimensionsList.Text, quantity: double.Parse(QuantityTB.Text), FileUpload.FileBytes);
-                    
+                    OrderB.Text = "Confirm Order";
+                    TotalAmountLabel.Text = $"Total amount is: {Double.Parse(QuantityTB.Text) * Double.Parse(availableDimensions[index][1])}";
+                    UploadPanel.EnableViewState = true;
+                }
+                else if (FileUpload.HasFile)
+                {
+                    var response = new Orders().PlaceOrder(email: Cookie.GetCookieData(request: Request), serviceType: orderTypeList.Text, dimensions: orderDimensionsList.Text, quantity: double.Parse(QuantityTB.Text), FileUpload.FileBytes);
                 }
             }
         }

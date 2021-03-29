@@ -20,6 +20,7 @@ namespace WebMidProject.BusinessLayer
                 con.Open();
 
                 var cmd = new SQLiteCommand(availableServicesCount, con);
+
                 var reader = cmd.ExecuteReader();
                 reader.Read();
 
@@ -28,6 +29,8 @@ namespace WebMidProject.BusinessLayer
                     var servicesCount = reader.GetInt32(0);
                     availableServices = new String[servicesCount];
 
+                    reader.Close();
+                    cmd.Dispose();
                     cmd = new SQLiteCommand(availableServiceTypesQuery, con);
                     reader = cmd.ExecuteReader();
                     if (reader.HasRows)
@@ -38,12 +41,15 @@ namespace WebMidProject.BusinessLayer
                         }
                     }
                 }
-                reader.Close();
+                
+                if(!reader.IsClosed) reader.Close();
+                reader.Dispose();
                 con.Close();
                 return availableServices;
             }
             catch (SQLiteException e)
             {
+                Debug.Print(e.Message);
                 return null;
             }
 
@@ -56,7 +62,7 @@ namespace WebMidProject.BusinessLayer
             {
                 var availableDimensionsCountQuery = $"SELECT COUNT(dimensions) FROM services WHERE service_type = '{serviceType}'";
                 var availableDimensionsQuery = $"SELECT dimensions, price FROM services WHERE service_type = '{serviceType}'";
-
+                
                 con.Open();
 
                 var cmd = new SQLiteCommand(availableDimensionsCountQuery, con);
@@ -68,65 +74,76 @@ namespace WebMidProject.BusinessLayer
                     var dimensionsCount = reader.GetInt32(0);
                     availableDimensions = new String[dimensionsCount][];
 
+                    reader.Close();
+                    cmd.Dispose();
+
                     cmd = new SQLiteCommand(availableDimensionsQuery, con);
                     reader = cmd.ExecuteReader();
                     if (reader.HasRows)
-                    {
-                        for (var i = 0; reader.Read(); i++)
-                        {
+                        for (var i = 0; reader.Read(); i++)    
                             availableDimensions[i] = new string[] { reader.GetString(0), reader.GetDouble(1).ToString()};
-                        }
-                    }
                 }
-                reader.Close();
+                if(!reader.IsClosed) reader.Close();
+                reader.Dispose();
                 con.Close();
                 return availableDimensions;
             }
             catch (SQLiteException e)
             {
+                Debug.Print(e.Message);
                 return null;
             }
 
         }
 
-        public bool PlaceOrder(String serviceType, String dimensions, Double quantity, byte[] fileBytes)
+        public bool PlaceOrder(String email, String serviceType, String dimensions, Double quantity, byte[] fileBytes)
         {
+           
             try
-            { 
-                var serviceTypeIdQuery = $"SELECT id FROM services" +
+            {
+                var queryString = $"SELECT id FROM services" +
                     $" WHERE service_type = '{serviceType}' and dimensions = '{dimensions}'";
 
-                con.Open();
-                var cmd = new SQLiteCommand(serviceTypeIdQuery, con);
-                var reader = cmd.ExecuteReader();
+              con.Open();
+              var cmd = new SQLiteCommand(queryString, con);
+
+               var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows)
                 {
                     reader.Read();
                     var serviceId = reader.GetInt32(0);
-                    Debug.Print($"serviceId id {serviceId}");
                     reader.Close();
+                    Debug.Print($"serviceId is {serviceId}");
+
+                    cmd.Dispose();
+                    queryString = $"SELECT id FROM users WHERE email = '{email}'";
+                    cmd = new SQLiteCommand(queryString, con);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        var userId = reader.GetInt32(0);
+                        reader.Close();
+
+                        Debug.Print($"userId is {userId}");
 
 
+                        queryString = $"INSERT INTO orders (user_id, service_id, quantity, image) " +
+                        $"VALUES('{userId}', '{serviceId}', '{quantity}', (@file)); ";
 
-                    var placeOrderQuery = $"INSERT INTO orders (service_id, quantity, image) " +
-                    $"VALUES('{serviceId}', '{quantity}', (@file)); ";
+                        cmd.CommandText = queryString;
+                        cmd.Parameters.Add("@file", DbType.Binary, 20).Value = fileBytes;
 
-                    cmd.CommandText = placeOrderQuery;
-                    cmd.Parameters.Add("@file", DbType.Binary, 20).Value = fileBytes;
+                        cmd.ExecuteNonQuery();
 
-
-                    cmd.ExecuteNonQuery();
-
-                    Debug.Print("YESSS");
-
-                    con.Close();
-
-                    //binaryReader.Close();
-                   // fileStream.Close();
+                        Debug.Print("Order successfully placed");
+                        con.Close();
+                        cmd.Dispose();
+                    }
                 }
                 return true;
-
             }
             catch (SQLiteException e)
             {

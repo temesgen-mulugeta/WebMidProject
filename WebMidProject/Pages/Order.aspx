@@ -52,13 +52,16 @@
               Quantity</p>
           <asp:TextBox ID="QuantityTB" class="form-control" runat="server" placeholder="Quantity"></asp:TextBox>
 
+          <asp:Panel ID="UploadPanel" EnableViewState="false" runat="server">
           <p class="label" style="margin-top:15px;">
               Upload Design</p>
           <asp:FileUpload ID="FileUpload" class="form-control" runat="server" placeholder="Upload FIle" />
           <br />
+          </asp:Panel>
         
           <p>
               <asp:Button ID="OrderB" class="button" runat="server" Text="Calculate Price" OnClick="OrderB_Click"/>
+              <br>
               <asp:Label ID="TotalAmountLabel" runat="server"/>
           </p>
             

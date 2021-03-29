@@ -25,8 +25,11 @@ namespace WebMidProject.Pages
                 password: PasswordTB.Text
                 );
             if (response)
-                Response.Redirect("Login.aspx");
-            
+            {
+                Response.Redirect("Login.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+
         }
     }
 }
