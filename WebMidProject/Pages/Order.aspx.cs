@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using WebMidProject.BusinessLayer;
 
@@ -9,8 +10,10 @@ namespace WebMidProject.Pages
         String[][] availableDimensions = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Debug.Print($"auth status is {Cookie.isUserLoggedIn(Request)}");
+            Debug.Print($"role is {Cookie.GetCookieData(Request).role}");
 
-            if (!Cookie.isUserLoggedIn(Request))
+            if (!Cookie.isUserLoggedIn(Request) || !(Cookie.GetCookieData(Request).role == "user"))
             {
                 Response.Redirect("Login.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
@@ -63,12 +66,12 @@ namespace WebMidProject.Pages
                 }
                 else if (FileUpload.HasFile)
                 {
-                    var response = new Orders().PlaceOrder(email: Cookie.GetCookieData(request: Request), serviceType: orderTypeList.Text, dimensions: orderDimensionsList.Text, quantity: double.Parse(QuantityTB.Text), FileUpload.FileBytes);
+                    var response = new Orders().PlaceOrder(email: Cookie.GetCookieData(request: Request).email, serviceType: orderTypeList.Text, dimensions: orderDimensionsList.Text, quantity: double.Parse(QuantityTB.Text), FileUpload.FileBytes);
                 }
             }
         }
     }
 }
 
-     
-    
+
+

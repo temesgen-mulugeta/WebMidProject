@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
-using System.IO;
 
 namespace WebMidProject.BusinessLayer
 {
@@ -11,7 +10,7 @@ namespace WebMidProject.BusinessLayer
         public String[] GetAvailableOrdersTypes()
         {
             String[] availableServices = null;
-            
+
             try
             {
                 var availableServicesCount = "SELECT COUNT(DISTINCT service_type) AS Count FROM services";
@@ -41,8 +40,8 @@ namespace WebMidProject.BusinessLayer
                         }
                     }
                 }
-                
-                if(!reader.IsClosed) reader.Close();
+
+                if (!reader.IsClosed) reader.Close();
                 reader.Dispose();
                 con.Close();
                 return availableServices;
@@ -62,7 +61,7 @@ namespace WebMidProject.BusinessLayer
             {
                 var availableDimensionsCountQuery = $"SELECT COUNT(dimensions) FROM services WHERE service_type = '{serviceType}'";
                 var availableDimensionsQuery = $"SELECT dimensions, price FROM services WHERE service_type = '{serviceType}'";
-                
+
                 con.Open();
 
                 var cmd = new SQLiteCommand(availableDimensionsCountQuery, con);
@@ -80,10 +79,10 @@ namespace WebMidProject.BusinessLayer
                     cmd = new SQLiteCommand(availableDimensionsQuery, con);
                     reader = cmd.ExecuteReader();
                     if (reader.HasRows)
-                        for (var i = 0; reader.Read(); i++)    
-                            availableDimensions[i] = new string[] { reader.GetString(0), reader.GetDouble(1).ToString()};
+                        for (var i = 0; reader.Read(); i++)
+                            availableDimensions[i] = new string[] { reader.GetString(0), reader.GetDouble(1).ToString() };
                 }
-                if(!reader.IsClosed) reader.Close();
+                if (!reader.IsClosed) reader.Close();
                 reader.Dispose();
                 con.Close();
                 return availableDimensions;
@@ -141,7 +140,7 @@ namespace WebMidProject.BusinessLayer
                                 );
 
                         }
-                    
+
                     reader.Close();
                     reader.Dispose();
                     cmd.Dispose();
@@ -173,16 +172,16 @@ namespace WebMidProject.BusinessLayer
 
         public bool PlaceOrder(String email, String serviceType, String dimensions, Double quantity, byte[] fileBytes)
         {
-           
+
             try
             {
                 var queryString = $"SELECT id FROM services" +
                     $" WHERE service_type = '{serviceType}' and dimensions = '{dimensions}'";
 
-              con.Open();
-              var cmd = new SQLiteCommand(queryString, con);
+                con.Open();
+                var cmd = new SQLiteCommand(queryString, con);
 
-               var reader = cmd.ExecuteReader();
+                var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows)
                 {
@@ -229,6 +228,6 @@ namespace WebMidProject.BusinessLayer
         }
     }
 
-   
-    
+
+
 }

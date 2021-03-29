@@ -260,6 +260,7 @@
     <Compile Include="BusinessLayer\Auth.cs" />
     <Compile Include="BusinessLayer\Cookie.cs" />
     <Compile Include="BusinessLayer\DataAccess.cs" />
+    <Compile Include="Models\CookieUserInfo.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="BusinessLayer\Orders.cs" />
     <Compile Include="Global.asax.cs">
