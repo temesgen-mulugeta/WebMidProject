@@ -54,7 +54,14 @@
                                 <tr>
                                     <td>
 
-        <div class=" container" >
+        <div class=" " style="
+            margin-top:30px;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 6px rgba(0,0,0,.25);
+            padding-top:20px;
+            padding-left:50px;
+            margin-left: 300px;
+            ">
             <div class="child">
                  ORDER ID<br />
                 
