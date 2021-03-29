@@ -52,8 +52,7 @@
 
             <!-- card -->
             <table>
-                                <%if (allOrders != null) { %>
-
+            <%if (allOrders != null) { %>
                 <%foreach (var order in allOrders) { %>
                     <tr>
                         <td>
@@ -101,14 +100,9 @@
                                 <div class="child" style="float:right;vertical-align:top">
                                     <div class="child">
                                         DESIGN FILE <br />
-                                        <asp:Button ID="downloadB" class="button" runat="server" Text="Download File"
-                                            OnClick="Download_Click" />
+                                        <img src="<%=String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(order.image))%>"></img>
                                     </div>
                                     <div class="child">
-
-                                        <asp:ImageButton ID="deleteB" class="button" runat="server" Text="Download File"
-                                            OnClick="Download_Click" src="../Images/delete.png" />
-
                                     </div>
                                 </div>
 
@@ -118,7 +112,7 @@
                     </tr>
 
                     <% } %>
-                                    <% } %>
+                <% } %>
 
             </table>
         </form>
