@@ -36,7 +36,9 @@
       
           <p class="label">
               ORDER TYPE</p>
-          <asp:DropDownList ID="orderTypeList" AutoPostBack="true" OnSelectedIndexChanged="orderTypeList_TextChanged" class="form-control" runat="server" placeholder="Order Type">
+          <asp:DropDownList ID="orderTypeList" AutoPostBack="true" OnSelectedIndexChanged="orderTypeList_TextChanged" AppendDataBoundItems="true" CausesValidation="true" class="form-control" runat="server" placeholder="Order Type">
+                  <asp:ListItem Text="--Select One--" Value="" />   
+
           </asp:DropDownList>
           
           <br />
@@ -56,7 +58,7 @@
           <br />
         
           <p>
-              <asp:Button ID="OrderB" class="button" runat="server" Text="Order" OnClick="OrderB_Click"/>
+              <asp:Button ID="OrderB" class="button" runat="server" Text="Calculate Price" OnClick="OrderB_Click"/>
               <asp:Label ID="TotalAmountLabel" runat="server"/>
           </p>
             

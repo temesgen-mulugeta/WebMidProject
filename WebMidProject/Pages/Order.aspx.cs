@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebMidProject.BusinessLayer;
 
 namespace WebMidProject.Pages
@@ -11,17 +7,16 @@ namespace WebMidProject.Pages
     public partial class Order : System.Web.UI.Page
     {
         String[][] availableDimensions = null;
-        int i = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!Cookie.isUserLoggedIn(Request))
             {
-                //Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx");
                 return;
             }
 
-            if (orderTypeList.Items.Count == 0)
+            if (orderTypeList.Items.Count == 1)
             {
                 var orderTypes = new Orders().GetAvailableOrdersTypes();
                 if (orderTypes != null && orderTypes.Length > 0)
@@ -64,10 +59,18 @@ namespace WebMidProject.Pages
                          where item.IndexOf(orderDimensionsList.Text) >= 0
                          select item.IndexOf(orderDimensionsList.Text)).SingleOrDefault();
 
-            if (OrderB.Text == "Order")
+            if (OrderB.Text == "Calculate Price")
             {
-                OrderB.Text = "Pay";
+                OrderB.Text = "Confirm Order";
                 TotalAmountLabel.Text = availableDimensions[index][1];
+            }
+            else
+            {
+                if (FileUpload.HasFile)
+                {
+                    var response = new Orders().PlaceOrder(serviceType: orderTypeList.Text, dimensions: orderDimensionsList.Text, quantity: double.Parse(QuantityTB.Text), FileUpload.FileBytes);
+                    
+                }
             }
         }
     }
