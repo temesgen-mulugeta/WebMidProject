@@ -37,7 +37,7 @@
                 <!-- log out -->
                 <div style="display:inline-block">
                     <div style="
-                     margin-left:850px;
+                     margin-left:650px;
                      font-size: 2rem;
                      font-weight: bold;
                     
@@ -57,7 +57,11 @@
                         <tr>
                             <td>
 
-                                <div class=" container">
+                                <div class=" " style="
+                                    margin-top:25px;
+                                    border-radius: 1rem;
+                                    box-shadow: 0px 2px 6px rgba(0,0,0,.25);
+                                    margin-left:350px">
                                     <div class="child">
                                         ORDER ID<br />
 
@@ -100,7 +104,8 @@
                                     <div class="child" style="float:right;vertical-align:top">
                                         <div class="child">
                                             DESIGN FILE <br />
-                                            <img src="<%=String.Format(" data:image/gif;base64,{0} ", Convert.ToBase64String(order.image))%>"></img>
+
+                                            <img style="width:50px;height:50px;" src="<%=String.Format(" data:image/gif;base64,{0} ", Convert.ToBase64String(order.image))%>"></img>
                                         </div>
                                         <div class="child">
                                         </div>
