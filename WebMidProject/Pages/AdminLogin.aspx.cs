@@ -25,8 +25,8 @@ namespace WebMidProject.Pages
                 {
                     cookie = new Cookie(LoginEmailTB.Text, Response);
                     cookie.AddCookie();
-                    Response.Redirect("UserHome.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                    Response.Redirect("AdminHome.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
             }
 
 

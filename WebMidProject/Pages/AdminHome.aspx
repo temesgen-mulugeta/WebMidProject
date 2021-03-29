@@ -49,36 +49,40 @@
     </div>
 
     <!-- card -->
+            <table>
+                    <%foreach (var order in allOrders) { %>
+                                <tr>
+                                    <td>
 
         <div class=" container" >
             <div class="child">
                  ORDER ID<br />
-                 <asp:Label class="bigno" ID="OrderNo" runat="server" Text="112"></asp:Label>     
+                
+                 <Label class="bigno" ID="OrderNo"><%=order.orderId%></Label>     
             </div>
           
             <div class="child ">
                     ORDERED BY <br/>
                 <div class="name">
-                          <asp:Label  ID="FirstName" runat="server" Text="Abebe"></asp:Label> <br/>
-                    <asp:Label ID="lastName" runat="server" Text="Kebede"></asp:Label> 
+                          <Label ID="FirstName"><%=order.clientName%></Label> <br/>
                 </div>
             
             </div>
 
             <div class="child ">
                     ORDER TYPE <br/>
-                  <asp:Label class="name type" ID="type" runat="server" Text="Business Card" ></asp:Label> <br/>
+                  <Label class="name type" ID="type"><%=order.serviceType%></Label> <br/>
                     
             </div>
 
             
             <div class="child ">
                     ORDER SIZE <br/>
-                  <asp:Label class="name" ID="size" runat="server" Text="50x50" ></asp:Label> <br/>        
+                  <Label class="name" ID="size"><%=order.dimensions%></Label> <br/>        
             </div>
             <div class="child ">
                    Quantity <br/>
-                  <asp:Label class="name" ID="quantity" runat="server" Text="15" ></asp:Label> <br/>        
+                  <Label class="name" ID="quantity" Text="15" ><%=order.quantity%></Label> <br/>        
             </div>
             <div class="child" style="float:right;vertical-align:top">
                  <div class="child" >
@@ -94,6 +98,10 @@
            
 
         </div>
+               </td></tr>
+
+                    <% } %>
+                </table>
     </form>
 </body>
 </html>

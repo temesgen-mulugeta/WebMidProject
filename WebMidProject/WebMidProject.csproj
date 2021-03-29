@@ -260,6 +260,7 @@
     <Compile Include="BusinessLayer\Auth.cs" />
     <Compile Include="BusinessLayer\Cookie.cs" />
     <Compile Include="BusinessLayer\DataAccess.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="BusinessLayer\Orders.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -349,7 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

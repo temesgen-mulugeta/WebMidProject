@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using WebMidProject.BusinessLayer;
 
 namespace WebMidProject.Pages
 {
     public partial class AdminHome : System.Web.UI.Page
     {
+        protected OrderModel[] allOrders = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (allOrders == null)
+            {
+                allOrders = new Orders().GetAllOrders();
+            }
+
+
 
         }
 
