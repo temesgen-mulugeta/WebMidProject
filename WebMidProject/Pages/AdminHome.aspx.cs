@@ -18,5 +18,10 @@ namespace WebMidProject.Pages
         {
 
         }
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

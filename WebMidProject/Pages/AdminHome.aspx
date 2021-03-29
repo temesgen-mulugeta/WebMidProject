@@ -11,7 +11,45 @@
        <link rel="icon" type="image/png" href="../Images/favicon.png"/>
 </head>
 <body>
-    <form id="form1" runat="server">
+        <form id="form1" runat="server">
+    <!--logo-->
+    <div class="logo" style="  
+        margin-left:250px;
+        margin-top:50px;
+        margin-bottom: 30px;
+        ">
+        <asp:Image runat="server"  src="../Images/AdminLogo.png" />
+    </div>
+    <div>
+        <div style="display:inline-block">
+                 <h1 class="headText" style="
+                     margin-left:400px;
+                     font-size: 3rem;
+                     font-weight: bold;
+                    
+                     margin-top: 40px;
+                     ">
+                     Your Orders</h1>
+        </div>
+
+        <!-- log out -->
+        <div style="display:inline-block">
+            <div  style="
+                     margin-left:850px;
+                     font-size: 2rem;
+                     font-weight: bold;
+                    
+                     margin-top: 40px;
+                     ">
+                <asp:Button ID="logoutB" class="button" runat="server" Text="Log Out" OnClick="Logout_Click" />
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- card -->
+
         <div class=" container" >
             <div class="child">
                  ORDER ID<br />
@@ -42,10 +80,18 @@
                    Quantity <br/>
                   <asp:Label class="name" ID="quantity" runat="server" Text="15" ></asp:Label> <br/>        
             </div>
-            <div class="child">
+            <div class="child" style="float:right;vertical-align:top">
+                 <div class="child" >
                   DESIGN FILE <br/>
-                <asp:Button ID="SignupB" class="button" runat="server" Text="Download File" OnClick="Download_Click" />
+                <asp:Button ID="downloadB" class="button" runat="server" Text="Download File" OnClick="Download_Click" />
             </div>
+            <div class="child" >
+                 
+                <asp:ImageButton ID="deleteB" class="button" runat="server" Text="Download File" OnClick="Download_Click" src="../Images/delete.png" />
+                
+            </div>
+            </div>
+           
 
         </div>
     </form>
