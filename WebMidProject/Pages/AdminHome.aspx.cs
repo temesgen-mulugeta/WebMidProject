@@ -8,13 +8,13 @@ namespace WebMidProject.Pages
         protected OrderModel[] allOrders = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Cookie.isUserLoggedIn(Request) && !(Cookie.GetCookieData(Request).role == "admin"))
+            if (!Cookie.isUserLoggedIn(Request) || !(Cookie.GetCookieData(Request).role == "admin"))
             {
                 Response.Redirect("AdminLogin.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
                 return;
             }
-            if (allOrders == null)
+            else if (allOrders == null)
             {
                 allOrders = new Orders().GetAllOrders();
             }
@@ -29,6 +29,9 @@ namespace WebMidProject.Pages
         }
         protected void Logout_Click(object sender, EventArgs e)
         {
+            new Cookie(response: Response).RemoveCookie();
+            Response.Redirect("AdminLogin.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
 
         }
     }
